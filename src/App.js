@@ -38,7 +38,7 @@ function App() {
   useInterval(() => {
     updatePosition();
     dispatch({ type: "update" });
-  }, !gameOver ? 125 : null);
+  }, !gameOver ? 125 - (ROWS - activeRow)*0.4 : null);
 
   const updatePosition = () => {
     if (activeDirection === RIGHT) {
