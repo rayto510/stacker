@@ -77,9 +77,9 @@ function App() {
       setGameOver(true);
       setActiveRow(ROWS);
       setActiveBlocks(3);
+      setActiveColumns([0, 1, 2]);
       alert('YOU WIN!');
-    }
-    if (activeRow < ROWS - 1) {
+    } else if (activeRow < ROWS - 1) {
       for (let activeColumn of activeColumns) {
         if (board[activeRow][activeColumn] === ACTIVE && board[activeRow + 1][activeColumn] !== ACTIVE) {
           setGameOver(true);
