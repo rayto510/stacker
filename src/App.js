@@ -30,6 +30,8 @@ function App() {
     switch (action.type) {
       case "update":
         return board.map((row, index) => index === activeRow ? row.map((cell, i) => i === activeColumn ? ACTIVE : EMPTY ) : row);
+      case "reset":
+        return createBoard();
       default:
         break;
     }
@@ -62,18 +64,26 @@ function App() {
     setActiveRow(activeRow - 1);
     if (activeRow === 0) {
       setGameOver(true);
+      setActiveRow(ROWS);
       alert('YOU WIN!');
     }
     if (activeRow < ROWS - 1 && board[activeRow][activeColumn] === ACTIVE && board[activeRow + 1][activeColumn] !== ACTIVE) {
       setGameOver(true);
+      setActiveRow(ROWS);
       alert('YOU LOSE! BETTER LUCK NEXT TIME!');
     }
+  }
+
+  const resetGame = () => {
+    setGameOver(false);
+    dispatch({ type: "reset" });
   }
 
   return (
     <div onClick={() => userClick()}
       className="App">
       <h1 className="title">Stacker</h1>
+      { gameOver ? <button onClick={() => resetGame()} className="restart">Restart</button> : null }
       {
         board.map((row, rowIndex) => {
           return (
