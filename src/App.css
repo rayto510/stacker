@@ -1,6 +1,7 @@
 .App {
   width: 30rem;
   margin: auto;
+  cursor: pointer;
 }
 
 .title {
