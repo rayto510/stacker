@@ -41,7 +41,7 @@ function App() {
   useInterval(() => {
     updatePosition();
     dispatch({ type: "update" });
-  }, !gameOver ? 125 - (ROWS - activeRow)*0.4 : null);
+  }, !gameOver ? 125 : null);
 
   const updatePosition = () => {
     const leftPositions = Array.from(activeColumns, c => c - 1);
