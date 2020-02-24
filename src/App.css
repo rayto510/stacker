@@ -17,3 +17,17 @@
   background-color: white;
   border: 2px solid black;
 }
+
+@media only screen and (max-width: 640px) {
+  .App {
+    width: 20rem;
+    margin: auto;
+  }
+
+  .cell {
+    height: 3rem;
+    background-color: white;
+    border: 2px solid black;
+  }
+}
+
