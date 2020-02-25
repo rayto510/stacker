@@ -23,10 +23,11 @@
   .App {
     width: 20rem;
     margin: auto;
+    margin-top: -50px;
   }
 
   .cell {
-    height: 3rem;
+    height: 2rem;
     background-color: white;
     border: 2px solid black;
   }
